@@ -1,0 +1,23 @@
+.partie1 {
+    background-color: #32fc3242;
+    padding: 3%;
+}
+
+.partie2 {
+    background-color: #32fc3242;
+    padding: 3%;
+}
+
+input.ng-valid {
+    border-left: 3px solid green;
+}
+input.ng-invalid {
+    border-left: 3px solid red;
+}
+.c1 {
+    background-color: goldenrod;
+    font-size: '\f241';
+    color: black;
+    width: 50%;
+    text-align: center;
+}

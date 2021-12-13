@@ -1,0 +1,39 @@
+
+
+<div class="container">
+    <div class="row align-items-start">
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+        <div class="col"></div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col"></div>
+        <div class="col-5 shadow-lg bg-gradient rounded auth">
+
+             <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <div class="row text-center">
+                    <h1>Authentification</h1>
+                </div>
+                <div><label for="username">Username:</label> <br>
+                    <input name="username"type="text" required [(ngModel)]="name"> <br></div>
+                <div>     <label for="password">Password</label>
+                    <br>
+                    <input name="password" type="password" required [(ngModel)]="psw" >
+                    <br></div>
+                    <br>
+                <div>
+                    <button   routerLink="/menu" (click)="onConnect()"class="btn btn-primary">
+                        
+                        Sign in</button>
+                </div>
+                
+            </form>    
+            <br>
+            
+            
+        </div>
+        <div class="col"></div>
+    </div>
+</div>

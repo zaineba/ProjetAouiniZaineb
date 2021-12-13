@@ -1,0 +1,236 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <div class="list-group">
+                <a routerLink="/dash" class="list-group-item list-group-item-action  ">
+                    Dashboard
+
+                </a>
+                <a routerLink="/produit" class="list-group-item list-group-item-action active">My products</a>
+                <a routerLink="/auth" class="list-group-item list-group-item-action  list-group-item-danger">Sign
+                    out</a>
+            </div>
+
+        </div>
+        <div class="col">
+            <div class="container prod">
+                <div class="row align-items-center">
+                    <h1>Touristic products :</h1>
+                </div>
+                
+                <br>
+
+                <div class="row align-items-center">
+                    <div class="col">
+                        <a routerLink="/add">
+                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                                data-bs-target="#addproduit">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+
+                                Add a product </button>
+                        </a>
+                    </div>
+                    <!--<select class="form-select btn btn-secondary" aria-label="Default select example">
+                            <option selected>Choose a filter</option>
+                            <option value="id">id</option>
+                            <option value="label">Libelle</option>
+                            <option value="genre">Genre</option>
+                        </select>-->
+                    <div class="col">
+                        <div class="c1">
+                            <form>
+                                Search :
+                                <input type="radio" name="reCateg" value="All" (click)="onAfficheAll()" checked>All
+                                <input type="radio" name="reCateg" value="Chalet" (click)="onAffiche1('Chalet')"> Chalet
+                                <input type="radio" name="reCateg" value="Nabeul" (click)="onAffiche2('Nabeul')">Nabeul
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <!--<div class="input-group ">
+                            <span class="input-group-text " id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i>  Search</span>
+                            <input type="text" class="form-control bg-secondary" style="color: white;" placeholder="Search">
+                        </div>-->
+                    </div>
+
+                </div>
+                <br>
+                <table class="table table-dark table-striped text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Libelle</th>
+                            <th scope="col">Photo</th>
+                            <th scope="col">Price</th>
+                            <th width="17%" scope="col" class="taille">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let p of produits">
+                            <td>{{p.id}}</td>
+                            <td>{{p.libelle}}</td>
+                            <td> <img src="{{p.photo}}" alt="img" width="30%"></td>
+                            <td>{{p.prix|number: '.3' }} TND per night</td>
+                            <td>
+                                
+                                    <div class="row align-items-center">
+                                       
+                                    <div class="col">
+                                        <button  [routerLink]="['/listproduit' , p.id] " type="button" class="btn btn-light rounded-circle"><i class="fa fa-info-circle"
+                                            aria-hidden="true">
+                                      </i></button>
+                                    </div>
+                                    <div class="col">
+                                        <button type="button"[routerLink]="['/modifier' , p.id] " class="btn btn-warning  rounded-circle"><i class="fa fa-pen"
+                                            data-bs-toggle="modal"    aria-hidden="true"></i></button>
+                                    </div>
+                                    <div class="col">
+                                        <button type="button" class="btn btn-danger  rounded-circle" (click)="onDelete(p)"><i class="fa fa-trash"
+                                                aria-hidden="true"> </i></button>
+                                    </div>
+                                </div>
+                
+
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<!--
+ <div class="container">
+    <div class="row">
+        <div class="col-2">
+            <div class="list-group">
+                <a routerLink="/dash" class="list-group-item list-group-item-action list-group-item-success">
+                    Dashboard
+
+                </a>
+                <a routerLink="/produit" class="list-group-item list-group-item-action active"></a>
+                <a routerLink="/auth" class="list-group-item list-group-item-action list-group-item-danger">Sign out</a>
+            </div>
+
+        </div>
+        <div class="col">
+            <div class="container prod">
+                <div class="row align-items-center">
+                    <h1>Touristic products :</h1>
+                </div>
+                <br>
+                <div class="row align-items-center">
+                    <div class="col">
+                        <a routerLink="/add">
+                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                            data-bs-target="#addproduit">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+            
+                            Add a product </button>
+                        </a></div>
+                        <select class="form-select btn btn-secondary" aria-label="Default select example">
+                            <option selected>Choose a filter</option>
+                            <option value="id">id</option>
+                            <option value="label">Libelle</option>
+                            <option value="genre">Genre</option>
+                        </select>
+                    <div class="col">
+                    </div>
+                    <div class="col ">
+                        <div class="input-group ">
+                            <span class="input-group-text " id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i>  Search</span>
+                            <input type="text" class="form-control bg-secondary" style="color: white;" placeholder="Search">
+                        </div>
+                    </div>
+            
+                </div>
+                <br>
+                <table class="table table-dark table-striped text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Libelle</th>
+                            <th scope="col">Genre</th>
+                            <th scope="col">Price</th>
+                            <th width="17%" scope="col" class="taille">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <button type="button" class="btn btn-light rounded-circle"><i class="fa fa-info-circle"
+                                                aria-hidden="true"></i></button>
+                                    </div>
+                                    <div class="col">
+                                        <button type="button" class="btn btn-warning  rounded-circle"><i class="fa fa-pen"
+                                            data-bs-toggle="modal"  data-bs-target="#modifierproduit"  aria-hidden="true"></i></button>
+                                    </div>
+                                    <div class="col">
+                                        <button type="button" class="btn btn-danger  rounded-circle"><i class="fa fa-trash"
+                                                aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+            
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</div>   
+-->
+
+
+
+
+
+<!--ajouter un produit 
+<div class="modal fade" id="addproduit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add a product:</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <a routerLink='/add'></a>
+                </button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+-->
+
+
+
+<!-- Modifier un produit
+
+<div class="modal fade" id="modifierproduit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Moderate a product :</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <app-modifierproduit></app-modifierproduit>
+            </div>
+        </div>
+    </div>
+</div>
+-->

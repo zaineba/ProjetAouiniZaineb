@@ -1,0 +1,14 @@
+.c1 {background-color: rgb(243, 232, 232);
+width: 50%;
+height: 50%;}
+.c2{background-color: blue;
+width: 50%;
+color: burlywood;
+text-align: center;}
+
+input.ng-valid {
+    border-left: 3px solid green;
+}
+input.ng-invalid {
+    border-left: 3px solid red;
+}

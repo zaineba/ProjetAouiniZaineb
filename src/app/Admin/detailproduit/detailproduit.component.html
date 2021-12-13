@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <div class="card text-center">
+                <div class="card-header">
+                    <strong>
+                        {{produit.libelle |titlecase}}
+                    </strong>
+                </div>
+                <div class="card-body">
+                    <img src="{{produit.photo}}" alt=""> <br>
+
+                    Catégorie :{{produit.categorie |uppercase}} <br>
+                    Lieu: {{produit.lieu |uppercase}} <br>
+                    <span [ngClass]="(produit.promotion)?'badge bg-warning':'badge bg-primary'">
+                        {{produit.prix |number: '.3' }} TND per night <br>
+                    </span>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-dark" routerLink="/listproduit">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

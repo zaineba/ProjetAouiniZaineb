@@ -1,0 +1,65 @@
+<div class="container c1">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <h2>Add a new product</h2>
+        <label for="label">Identifiant</label>
+        <input type="number" name="id" [(ngModel)]="produit.id" reuired #n="ngModel">
+        <div *ngIf="n.invalid && n.dirty" class="alert alert-danger">
+            You must write a number
+        </div>
+        <br>
+        <label for="label">Libelle</label>
+        <input type="text" name="libelle"  [(ngModel)]="produit.libelle" required  pattern = "[A-Z][a-zA-Z]+" reuired #l="ngModel">
+        <div *ngIf="l.errors?.required && l.dirty" class="alert alert-danger">
+            Libelle is obligatory
+        </div>
+        <br>
+        <div>
+            <label>
+                <input type="checkbox" name="promotion" [(ngModel)]="produit.promotion"> In promotion
+            </label>
+        </div>
+        <br>
+        <div>
+            <label>Price</label>
+            <input type="number" name="prix" [(ngModel)]="produit.prix">
+        </div>
+        <br>
+        <div>
+            <label for="genre">City</label>
+            <select name="lieu" type="select" [(ngModel)]="produit.lieu">
+                <option *ngFor="let c of lesLieux " [value]="c">{{c}}</option>
+            </select>
+        </div>
+        <br>
+        <label for="img">Add a new photo</label>
+        <input type="file" class="form-control-file" id="photo" [(ngModel)]="produit.photo">
+        <br>
+        <label for="categorie">Categories</label>
+        <select type="select" name="categorie" class="form-select" [(ngModel)]="produit.categorie">
+            <option *ngFor="let c of lesCategories " [value]="c">{{c}}</option>
+        </select>
+        <br>
+        <label for="date">Date</label>
+        <input name="date" type="date" class="form-control">
+        <br>
+        <!--
+        <div class="row align-items-center">
+            <div class="col"><button type="button" class="btn btn-success"><i class="fa fa-check"
+                        aria-hidden="true"></i> Valid</button></div>
+            <div class="col"><button type="button" class="btn btn-danger"><i class="fa fa-times "
+                        aria-hidden="true"></i> Cancel</button></div>
+        </div>
+         -->
+
+        <input type="submit"  value="Add" class="btn btn-success">
+
+        <input type="button" value="Cancel" (click)="onVider(f)" class="btn btn-danger">
+
+    </form>
+</div>
+<div  class="c2" *ngIf="f.submitted">
+    {{msg}}
+</div>
+
+
+        

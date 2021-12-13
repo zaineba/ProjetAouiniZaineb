@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col partie1">
+            <h2 class="fw-bold text-center">Contact us</h2>
+            <br>
+          <span>"Best tunisia travel " offers to u the best place to entertain and forget your problems. 
+            Just contact us to have more information or call us .</span> 
+        </div>
+        <div class="col partie2">
+            <form #f="ngForm" >
+                <label for="nom">Name</label>
+                <input id="nom" type="text" class="form-control" placeholder="Name" ngModel>
+                <br>
+                <label for="prenom">Family name</label>
+            <input id="prenom" type="text" class="form-control" placeholder="Family name" ngModel>
+            <br>
+            <label for="msg">Message</label>
+            <textarea id="msg" cols="30" rows="5" class="form-control" placeholder="Text us" ngModel></textarea>
+            <br>
+            
+                    
+            <input type="submit"  value="Send" class="btn btn-primary">
+              
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col"><div class="c1"  *ngIf="f.submitted">
+           <h5>Your message is sent.</h5>
+        </div></div>
+        <div class="col"></div>
+    </div>
+</div>

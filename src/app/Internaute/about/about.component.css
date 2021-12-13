@@ -1,0 +1,13 @@
+.about {
+    background-color: #f0f8ff7a;
+    padding: 2%;
+}
+
+.info {
+    padding: 2%;
+    background-color: rgba(50, 252, 50, 0.164);
+}
+
+.info:hover {
+    background-color: rgba(50, 252, 50, 0.589);
+}

@@ -1,0 +1,45 @@
+<div class="container c1">
+    <div class="row">
+        <div class="col-3">
+            <div class="list-group">
+                <a routerLink="/dash" class="list-group-item list-group-item-action active">
+                    Dashboard
+
+                </a>
+                <a routerLink="/produit" class="list-group-item list-group-item-action ">My products</a>
+                <a routerLink="/auth" class="list-group-item list-group-item-action list-group-item-danger">Sign out</a>
+            </div>
+
+        </div>
+        <div class="col ">
+            <div class="container">
+                <div class="row align-items-center">
+                    <h1>Dashboard</h1>
+                </div>
+                <table class="table table-light table-striped text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">Product Name </th>
+                            <th scope="col">Clients per year </th>
+                            <th scope="col">Familial visitors</th>
+                            <th scope="col">Friend visitors</th>
+                            <th scope="col">Couple visitors</th>
+                            <th scope="col">Gain per year</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let d of dashs">
+                            <td>{{d.nom}}</td>
+                            <td>{{d.nombreclient}}</td>
+                            <td>{{d.family}}</td>
+                            <td>{{d.friend}}</td>
+                            <td>{{d.couple}}</td>
+                            <td>{{d.gain|number: '.3'}}TND</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
