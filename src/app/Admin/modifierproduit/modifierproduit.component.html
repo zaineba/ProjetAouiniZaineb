@@ -3,7 +3,6 @@
         <h2>Update :</h2>
         <label for="label">Identifiant</label>
         <input type="number" name="id" [(ngModel)]="produit.id" value =""reuired #n="ngModel">
-        {{produit.id}}
         <div *ngIf="n.invalid && n.dirty" class="alert alert-danger">
             You must write a number
         </div>
